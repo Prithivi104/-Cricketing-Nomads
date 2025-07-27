@@ -1,0 +1,81 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>THE CRICKETING NOMADS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+  // Trick to autoplay in modern browsers
+  window.addEventListener('load', function () {
+    const anthem = document.getElementById('anthem');
+    anthem.volume = 0.5; // lower volume if needed
+    anthem.play().catch(e => {
+      console.log("Autoplay blocked. User interaction needed.");
+    });
+  });
+
+  
+</script>
+
+  <header>
+    <h1>🏏 THE CRICKETING NOMADS</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="players.html">Players</a>
+      <a href="stats.html">Stats</a>
+      <a href="matches.html">Match Log</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to Our Official Cricket Team Site!</h2>
+    <p>Welcome to The Cricketing Nomads!
+
+We are The Cricketing Nomads, a passionate cricket team based in Hetauda. We love the game and are dedicated to creating a strong platform for everyone interested in playing cricket. Together, let's nurture fresh talent and inspire the next generation of cricket champions.
+
+We’re a committed group of cricketers who play with heart and hustle.
+Follow our player stats, match logs, and track every step of our journey here on our website. </p>
+    <img src="players/team-photo.jpg.jpg" alt="Team photo" width="250">
+
+    <!-- 🎵 National Anthem Player -->
+<audio id="anthem">
+  <source src="players/anthem.mp3.mp3" type="audio/mp3">
+</audio>
+
+<div class="anthem-button-container">
+  <button id="anthem-btn">🎵 Play Anthem</button>
+  <h2> WAIT 5 SEC FOR NATIONAL ANTHEM TO PLAY </h2>
+  <h1>जय नेपाल</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" alt="Nepal Flag" width="30" />
+
+</div>
+
+  </main>
+
+<script>
+  const anthem = document.getElementById('anthem');
+  const button = document.getElementById('anthem-btn');
+
+  let isPlaying = false;
+
+  button.addEventListener('click', function () {
+    if (!isPlaying) {
+      anthem.play();
+      button.textContent = "⏸ Pause Anthem";
+    } else {
+      anthem.pause();
+      button.textContent = "🎵 Play Anthem";
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
